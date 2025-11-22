@@ -1,0 +1,6 @@
+name: VoteChatPlugin
+version: '1.0-SNAPSHOT'
+main: org.Main
+api-version: '1.21'
+prefix: [ BankSystem ]
+authors: [ nospighost ]
