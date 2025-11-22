@@ -6,6 +6,7 @@ import co.aikar.commands.annotation.CommandPermission;
 import co.aikar.commands.annotation.Subcommand;
 import co.aikar.commands.annotation.Syntax;
 import net.md_5.bungee.api.chat.ClickEvent;
+import net.md_5.bungee.api.chat.HoverEvent;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
@@ -58,10 +59,12 @@ public class VoteCommand extends BaseCommand {
 
         TextComponent yes = new TextComponent("[Ja]");
         yes.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/abstimmung internalvote yes"));
+        yes.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new net.md_5.bungee.api.chat.ComponentBuilder("§a§lKlicke um Ja zu stimmen").create()));
         yes.setColor(net.md_5.bungee.api.ChatColor.GREEN);
 
         TextComponent no = new TextComponent("[Nein]");
         no.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/abstimmung internalvote no"));
+        no.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new net.md_5.bungee.api.chat.ComponentBuilder("§c§l    Klicke um für Nein zu stimmen").create()));
         no.setColor(net.md_5.bungee.api.ChatColor.RED);
 
         message.addExtra(yes);
